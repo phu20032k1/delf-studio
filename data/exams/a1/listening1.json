@@ -1,0 +1,35 @@
+{
+  "level": "A1",
+  "title": "DELF A1 – Listening 01",
+  "description": "Bài nghe cơ bản.",
+  "sections": [
+    {
+      "title": "Partie 1",
+      "type": "listening",
+      "audio": "/audio/a1/listening1/track1.mp3",
+      "questions": [
+        {
+          "question": "Người nói tên là gì?",
+          "answers": ["Marie", "Julie", "Anna"],
+          "correct": 0,
+          "explanation": "Cô ấy nói: Je m'appelle Marie.",
+          "transcript": "Je m'appelle Marie. J'ai vingt ans."
+        }
+      ]
+    },
+    {
+      "title": "Partie 2",
+      "type": "listening",
+      "audio": "/audio/a1/listening1/track2.mp3",
+      "questions": [
+        {
+          "question": "Marie sống ở đâu?",
+          "answers": ["Paris", "Lyon", "Nice"],
+          "correct": 1,
+          "explanation": "Marie nói: j'habite à Lyon.",
+          "transcript": "J'habite à Lyon."
+        }
+      ]
+    }
+  ]
+}

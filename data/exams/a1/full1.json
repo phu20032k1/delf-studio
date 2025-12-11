@@ -1,0 +1,31 @@
+{
+  "title": "DELF A1 - Đề Tổng Hợp 02",
+  "sections": [
+    {
+      "type": "listening",
+      "title": "Compréhension Orale A2",
+      "audio": "audio/a2/a2_listening1.mp3",
+      "questions": [
+        {
+          "question": "Cô ấy nói về điều gì?",
+          "answers": ["Công việc", "Gia đình", "Kỳ nghỉ", "Mua sắm"],
+          "correct": 2,
+          "transcript": "Je parle de mes vacances...",
+          "explanation": "Vacances = kỳ nghỉ"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Compréhension Écrite A2",
+      "paragraph": "Texte : Le marché ouvre à 8h...",
+      "questions": [
+        {
+          "question": "Chợ mở lúc mấy giờ?",
+          "answers": ["7h", "8h", "9h", "10h"],
+          "correct": 1
+        }
+      ]
+    }
+  ]
+}

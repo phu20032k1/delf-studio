@@ -1,0 +1,13 @@
+{
+  "level": "A2",
+  "title": "DELF A2 – Listening 03",
+  "description": "Bài nghe về mua sắm.",
+  "sections": [
+    {
+      "title": "Partie 1",
+      "type": "listening",
+      "audio": "/audio/a2/listening3/track1.mp3",
+      "questions": []
+    }
+  ]
+}

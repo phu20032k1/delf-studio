@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Danh sách đề thi A2</title>
+
+<style>
+    body {
+        font-family: "Inter", sans-serif;
+        background: #f9fbff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: min(800px, 92%);
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #1e293b;
+    }
+
+    .exam-item {
+        background: white;
+        padding: 18px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+        transition: 0.25s;
+        cursor: pointer;
+    }
+
+    .exam-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 18px rgba(0,0,0,0.12);
+        border-color: #93c5fd;
+    }
+
+    .exam-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #1e40af;
+    }
+
+    .exam-desc {
+        font-size: 14px;
+        color: #475569;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Đề thi DELF A1</h1>
+    <div id="examList"></div>
+</div>
+
+<script>
+async function loadExamList() {
+    const container = document.getElementById("examList");
+
+    // Danh sách file JSON (bạn chỉ cần thêm file mới)
+    const files = [
+        "listening1.json",
+        "reading1.json"
+    ];
+
+    for (let file of files) {
+        const res = await fetch(`../../data/exams/2/${file}`);
+        const data = await res.json();
+
+        const div = document.createElement("div");
+        div.className = "exam-item";
+
+        div.innerHTML = `
+            <div class="exam-title">${data.title}</div>
+            <div class="exam-desc">Nhấn để làm bài</div>
+        `;
+
+        div.onclick = () => {
+            window.location.href = `../template/index.html?exam=../../data/exams/b2/${file}`;
+        };
+
+        container.appendChild(div);
+    }
+}
+
+loadExamList();
+</script>
+
+</body>
+</html>

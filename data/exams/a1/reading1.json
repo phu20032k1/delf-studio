@@ -1,0 +1,20 @@
+{
+  "level": "A1",
+  "title": "DELF A1 – Reading 01",
+  "description": "Bài đọc ngắn.",
+  "sections": [
+    {
+      "title": "Compréhension Écrite",
+      "type": "reading",
+      "questions": [
+        {
+          "text": "Paul làm việc ở trung tâm thành phố. Mỗi ngày anh đi xe bus.",
+          "question": "Paul đi làm bằng phương tiện gì?",
+          "answers": ["Xe bus", "Xe hơi", "Xe đạp"],
+          "correct": 0,
+          "explanation": "Trong đoạn văn có câu 'il prend le bus'."
+        }
+      ]
+    }
+  ]
+}

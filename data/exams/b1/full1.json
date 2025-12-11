@@ -1,0 +1,43 @@
+{
+  "title": "DELF B1 - Đề Tổng Hợp 01",
+  "sections": [
+    {
+      "type": "listening",
+      "title": "Compréhension Orale B1",
+      "audio": "audio/b1/b1_listening1.mp3",
+      "questions": [
+        {
+          "question": "Mục đích của cuộc nói chuyện là gì?",
+          "answers": ["Khiếu nại", "Đặt lịch", "Xin thông tin", "Tự giới thiệu"],
+          "correct": 1,
+          "transcript": "Je voudrais prendre rendez-vous...",
+          "explanation": "Prendre rendez-vous = đặt lịch"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Compréhension Écrite B1",
+      "paragraph": "Texte : L’écologie est un sujet important...",
+      "questions": [
+        {
+          "question": "Đoạn văn nói về gì?",
+          "answers": ["Môi trường", "Kinh tế", "Sức khỏe", "Thời tiết"],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "type": "writing",
+      "title": "Production Écrite B1",
+      "task": "Viết email 120 từ kể về một trải nghiệm đáng nhớ.",
+      "hint": "Gợi ý: Je suis allé..., J'ai fait..., C'était..."
+    },
+    {
+      "type": "speaking",
+      "title": "Production Orale B1",
+      "task": "Nói về sở thích của bạn và giải thích tại sao bạn thích nó.",
+      "hint": "Gợi ý: J’aime..., Je préfère..., Cela me rend..."
+    }
+  ]
+}

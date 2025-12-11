@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Từ vựng DELF</title>
+  <style>
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #f3f7ff, #fff7f0, #fdf2ff);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 40px auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 26px;
+    }
+
+    .level-switch {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .level-btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #cbd5f5;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      cursor: pointer;
+      color: #475569;
+      transition: 0.2s;
+    }
+
+    .level-btn.active {
+      background: #4f46e5;
+      color: white;
+      border-color: #4f46e5;
+    }
+
+    .topic-card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 12px 26px rgba(148, 163, 184, 0.35);
+      padding: 20px 22px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.4s ease;
+    }
+
+    .topic-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .vocab-item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .vocab-fr {
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    .vocab-vi {
+      color: #0f172a;
+      font-size: 14px;
+    }
+
+    .vocab-example {
+      font-size: 13px;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Từ vựng DELF</h1>
+    <p class="sub">Xem từ vựng theo cấp độ và theo chủ đề. Dữ liệu được lấy từ các file JSON bạn chỉnh trong VS Code.</p>
+
+    <div class="level-switch">
+      <button class="level-btn active" onclick="changeLevel('a1', this)">A1</button>
+      <button class="level-btn" onclick="changeLevel('a2', this)">A2</button>
+      <button class="level-btn" onclick="changeLevel('b1', this)">B1</button>
+      <button class="level-btn" onclick="changeLevel('b2', this)">B2</button>
+    </div>
+
+    <div id="topicsContainer"></div>
+  </div>
+
+  <script>
+    let currentLevel = "a1";
+
+    async function loadVocabulary(level) {
+      const container = document.getElementById("topicsContainer");
+      container.innerHTML = "Đang tải...";
+
+      try {
+        const res = await fetch(`../data/vocabulary/${level}.json`);
+        const data = await res.json();
+
+        container.innerHTML = "";
+
+        data.topics.forEach(topic => {
+          const topicDiv = document.createElement("div");
+          topicDiv.className = "topic-card";
+
+          const title = document.createElement("div");
+          title.className = "topic-title";
+          title.textContent = topic.name;
+          topicDiv.appendChild(title);
+
+          topic.items.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "vocab-item";
+
+            const fr = document.createElement("div");
+            fr.className = "vocab-fr";
+            fr.textContent = item.fr;
+
+            const vi = document.createElement("div");
+            vi.className = "vocab-vi";
+            vi.textContent = item.vi;
+
+            const ex = document.createElement("div");
+            ex.className = "vocab-example";
+            ex.textContent = item.example;
+
+            itemDiv.appendChild(fr);
+            itemDiv.appendChild(vi);
+            itemDiv.appendChild(ex);
+
+            topicDiv.appendChild(itemDiv);
+          });
+
+          container.appendChild(topicDiv);
+        });
+
+      } catch (e) {
+        container.innerHTML = "Không tải được dữ liệu. Kiểm tra lại đường dẫn JSON.";
+      }
+    }
+
+    function changeLevel(level, btn) {
+      currentLevel = level;
+
+      document.querySelectorAll(".level-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      loadVocabulary(level);
+    }
+
+    // load A1 mặc định
+    loadVocabulary("a1");
+  </script>
+</body>
+</html>

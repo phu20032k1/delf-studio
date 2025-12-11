@@ -1,0 +1,21 @@
+{
+  "level": "A1",
+  "topics": [
+    {
+      "name": "Chào hỏi",
+      "image": "greetings.jpg",
+      "items": [
+        { "term": "Bonjour", "meaning": "Xin chào" },
+        { "term": "Salut", "meaning": "Chào (thân mật)" }
+      ]
+    },
+    {
+      "name": "Gia đình",
+      "image": "family.jpg",
+      "items": [
+        { "term": "Mère", "meaning": "Mẹ" },
+        { "term": "Père", "meaning": "Ba" }
+      ]
+    }
+  ]
+}

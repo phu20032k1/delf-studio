@@ -1,0 +1,43 @@
+{
+  "title": "DELF B2 - Full Test 01",
+  "sections": [
+    {
+      "type": "listening",
+      "title": "Compréhension Orale B2",
+      "audio": "audio/b2/b2_listening1.mp3",
+      "questions": [
+        {
+          "question": "Quan điểm của người nói là gì?",
+          "answers": ["Ủng hộ", "Phản đối", "Trung lập", "Không rõ"],
+          "correct": 0,
+          "transcript": "Je pense que c’est une excellente idée...",
+          "explanation": "Excellente idée = ủng hộ"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Compréhension Écrite B2",
+      "paragraph": "Texte argumentatif...",
+      "questions": [
+        {
+          "question": "Tác giả muốn truyền tải điều gì?",
+          "answers": ["Bất bình", "Quan điểm", "Lịch sử", "Kể chuyện"],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "type": "writing",
+      "title": "Production Écrite B2",
+      "task": "Viết một bài luận trình bày quan điểm của bạn.",
+      "hint": "Gợi ý: À mon avis..., Pour commencer..., Cependant..."
+    },
+    {
+      "type": "speaking",
+      "title": "Production Orale B2",
+      "task": "Trình bày quan điểm của bạn về một vấn đề xã hội.",
+      "hint": "Gợi ý: Je suis convaincu que..., Il est important de..."
+    }
+  ]
+}
